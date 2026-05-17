@@ -1,12 +1,13 @@
 
 function mandelbrot_iterations(c::ComplexF64, max_iter::Int)::Int
     
-    z = ComplexF64(0.0, 0.0)
+    z = zero(ComplexF64)
 
     for i in 1:max_iter
-        z = z * z + c           # equation
+
+        z = z * z + c          
         
-        if abs2(z) > 4.0        # abs2 avoids sq. rt; |z|² > 4 ≡ |z| > 2
+        if abs2(z) > 4.0      
             return i
         end
     end

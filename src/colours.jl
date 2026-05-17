@@ -14,7 +14,7 @@ function iterations_to_image(iter_counts::Matrix{Int}, max_iter::Int)
             if n == max_iter
                 img[py, px] = RGB(0.0, 0.0, 0.0)
             else
-                t = n / max_iter
+                t = log1p(Float64(n)) / log1p(Float64(max_iter))
                 img[py, px] = RGB(t, t, t)
             end
 

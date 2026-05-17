@@ -3,6 +3,7 @@ function burning_ship_iterations(c::ComplexF64, max_iter::Int)::Int
     z = ComplexF64(0.0, 0.0)
 
     for i in 1:max_iter
+       
         z = ComplexF64(abs(real(z)), abs(imag(z)))
         z = z * z + c
 
@@ -10,7 +11,6 @@ function burning_ship_iterations(c::ComplexF64, max_iter::Int)::Int
             return i
         end
     end
-
     return max_iter
 end
 
