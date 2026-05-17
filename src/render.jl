@@ -1,14 +1,16 @@
-
 function pixel_to_complex(px, py, width, height,
                            x_min, x_max, y_min, y_max)::ComplexF64
-   
+
     re = x_min + ((px - 1) / (width  - 1)) * (x_max - x_min)
     im = y_max - ((py - 1) / (height - 1)) * (y_max - y_min)
 
     return ComplexF64(re, im)
 end
 
+
 function render_mandelbrot(width::Int, height::Int, max_iter::Int;
+                            x_min=-2.0, x_max=1.0,
+                            y_min=-1.5, y_max=1.5)::Matrix{Int}
 
     iter_counts = zeros(Int, height, width)
     for py in 1:height
