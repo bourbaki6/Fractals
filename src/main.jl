@@ -1,4 +1,3 @@
-
 include("mandelbrot.jl")
 include("julia_set.jl")
 include("burning_ship.jl")
@@ -8,6 +7,14 @@ include("colours.jl")
 using Images
 using Colors
 using FileIO
+
+function render_and_save(name::String, counts::Matrix{Int},
+                         max_iter::Int, output_dir::String)
+    img  = iterations_to_image(counts, max_iter)
+    path = joinpath(output_dir, "$name.png")
+    save(path, img)
+    println("Saved: $name.png\n")
+end
 
 function main()
 

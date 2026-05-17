@@ -1,6 +1,7 @@
 
 function burning_ship_iterations(c::ComplexF64, max_iter::Int)::Int
-    z = ComplexF64(0.0, 0.0)
+    
+    z = zero(ComplexF64)
 
     for i in 1:max_iter
        
