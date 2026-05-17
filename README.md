@@ -47,7 +47,7 @@ iteration-zero/
 
 ---
 
-## Math behind teh Fractals
+## Math Behind the Fractals
 
 ### Mandelbrot Set
 
